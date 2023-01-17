@@ -1,7 +1,9 @@
 package main
 
+const prefixHelloPortuguese = "Olá, "
+
 func HelloWorld(name string) string {
-	return "Hello " + name
+	return prefixHelloPortuguese + name
 }
 
 func main() {
