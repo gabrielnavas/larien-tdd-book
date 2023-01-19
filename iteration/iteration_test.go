@@ -14,7 +14,7 @@ func TestIteration(t *testing.T) {
 	}
 }
 
-func BenchmarkRepeat(b *testing.B) {
+func BenchmarkIteration(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		iteration.Repeat("a", 10)
 	}
