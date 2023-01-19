@@ -6,11 +6,24 @@ import (
 )
 
 func TestArray(t *testing.T) {
-	numbers := [5]int{1, 1, 2, 2, 3}
-	got := array_slices.Sum(numbers)
-	want := 9
 
-	if got != want {
-		t.Errorf("want '%d' got '%d', given '%v'", want, got, numbers)
-	}
+	t.Run("collection with 5 numbers", func(t *testing.T) {
+		numbers := []int{1, 1, 2, 2, 3}
+		got := array_slices.Sum(numbers)
+		want := 9
+
+		if got != want {
+			t.Errorf("want '%d' got '%d', given '%v'", want, got, numbers)
+		}
+	})
+
+	t.Run("collection with anything length", func(t *testing.T) {
+		numbers := []int{1, 1, 2}
+		got := array_slices.Sum(numbers)
+		want := 4
+
+		if got != want {
+			t.Errorf("want '%d' got '%d', given '%v'", want, got, numbers)
+		}
+	})
 }
