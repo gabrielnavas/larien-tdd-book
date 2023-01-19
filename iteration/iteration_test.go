@@ -1,11 +1,12 @@
 package iteration_test
 
 import (
+	"fmt"
 	"larien-tdd-book/iteration"
 	"testing"
 )
 
-func TestIteration(t *testing.T) {
+func TestRepeat(t *testing.T) {
 	got := iteration.Repeat("a", 10)
 	want := "aaaaaaaaaa"
 
@@ -14,8 +15,14 @@ func TestIteration(t *testing.T) {
 	}
 }
 
-func BenchmarkIteration(b *testing.B) {
+func BenchmarkRepeat(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		iteration.Repeat("a", 10)
 	}
+}
+
+func ExampleRepeat() {
+	chars := iteration.Repeat("a", 10)
+	fmt.Println(chars)
+	// Output: aaaaaaaaaa
 }
