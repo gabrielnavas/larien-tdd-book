@@ -1,6 +1,9 @@
-package main
+package helloworld_test
 
-import "testing"
+import (
+	helloworld "larien-tdd-book/hello_world"
+	"testing"
+)
 
 func TestHelloWorld(t *testing.T) {
 
@@ -12,14 +15,14 @@ func TestHelloWorld(t *testing.T) {
 	}
 
 	t.Run("say hello to people", func(t *testing.T) {
-		got := HelloWorld("John")
+		got := helloworld.HelloWorld("John")
 		want := "Olá, John"
 
 		verifyAllCorrectMessage(t, got, want)
 	})
 
 	t.Run("Hello world, when input an empty string", func(t *testing.T) {
-		got := HelloWorld("")
+		got := helloworld.HelloWorld("")
 		want := "Hello World"
 
 		verifyAllCorrectMessage(t, got, want)
