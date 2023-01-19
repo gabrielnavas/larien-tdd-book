@@ -13,3 +13,9 @@ func TestIteration(t *testing.T) {
 		t.Errorf("got '%s'; want '%s'", got, want)
 	}
 }
+
+func BenchmarkRepeat(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		iteration.Repeat("a")
+	}
+}
